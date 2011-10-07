@@ -8,7 +8,7 @@ use RDF::Trine qw[];
 use Scalar::Util qw[];
 use URI::file qw[];
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 my $Model = {};
 
