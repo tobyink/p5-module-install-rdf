@@ -1,7 +1,7 @@
 package Module::Install::RDF;
 
 use 5.008;
-use base qw(Module::Install::Base);
+use parent qw(Module::Install::Base);
 use strict;
 
 our $VERSION = '0.002';
