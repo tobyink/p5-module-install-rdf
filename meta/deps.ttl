@@ -2,7 +2,7 @@
 
 <http://purl.org/NET/cpan-uri/dist/Module-Install-RDF/project>
 	:requires
-		"Scalar::Util" ,
+		"Object::ID" ,
 		"Module::Install 1.00" ,
 		"RDF::Trine 0.112" ,
 		"URI::file 4.0" ;

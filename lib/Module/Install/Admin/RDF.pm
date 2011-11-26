@@ -4,11 +4,11 @@ use 5.008;
 use parent qw(Module::Install::Base);
 use strict;
 
+use Object::ID;
 use RDF::Trine qw[];
-use Scalar::Util qw[];
 use URI::file qw[];
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 my $Model = {};
 
@@ -16,7 +16,7 @@ sub rdf_metadata
 {
 	my ($self) = @_;
 	
-	my $addr = Scalar::Util::refaddr($self->_top);
+	my $addr = object_id($self->_top);
 	return $Model->{$addr} if defined $Model->{$addr};
 	my $model = $Model->{$addr} = RDF::Trine::Model->new;
 	
@@ -35,6 +35,26 @@ sub rdf_metadata
 	}
 	
 	return $model;
+}
+
+sub rdf_project_uri
+{
+	my ($self) = @_;
+	my $model = $self->rdf_metadata;
+	
+	my @candidates = $model->subjects(
+		RDF::Trine::iri('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+		RDF::Trine::iri('http://usefulinc.com/ns/doap#Project'),
+		);
+	return $candidates[0] if scalar @candidates == 1;
+	
+	my %counts = map {
+		$_ => $model->count_statements($_, undef, undef);
+		} @candidates;	
+	my @best = sort { $counts{$b} <=> $counts{$a} } @candidates;
+	return $best[0] if @best;
+	
+	return undef;
 }
 
 1;
