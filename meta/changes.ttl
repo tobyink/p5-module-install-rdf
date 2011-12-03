@@ -34,6 +34,18 @@ my:v_0-003
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-RDF-0.003.tar.gz> ;
 	dcs:changeset [
 		dcs:versus my:v_0-002 ;
+		dcs:item   [ rdfs:label "use parent" ; a dcs:Regression ] ;
 		dcs:item   [ a dcs:Addition ; rdfs:label "rdf_project_uri function which provides heuristics to determine the URI of the primary doap:Project described in the meta directory."@en ] ;
 		dcs:item   [ rdfs:label "Use Object::ID::object_id instead of Scalar::Util::refaddr to uniquely identity Module::Install objects. (Though in a typical installation scenario, this shouldn't matter much.)"@en ]
+	] .
+
+my:project :release my:v_0-004 .
+my:v_0-004
+	a               :Version ;
+	dc:issued       "2011-12-03"^^xsd:date ;
+	:revision       "0.004"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Install-RDF-0.004.tar.gz> ;
+	dcs:changeset [
+		dcs:versus my:v_0-003 ;
+		dcs:item   [ rdfs:label "use base" ; a dcs:Bugfix ] 
 	] .

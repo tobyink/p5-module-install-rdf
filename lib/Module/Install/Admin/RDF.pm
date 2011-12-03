@@ -1,14 +1,14 @@
 package Module::Install::Admin::RDF;
 
 use 5.008;
-use parent qw(Module::Install::Base);
+use base qw(Module::Install::Base);
 use strict;
 
 use Object::ID;
 use RDF::Trine qw[];
 use URI::file qw[];
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 
 my $Model = {};
 

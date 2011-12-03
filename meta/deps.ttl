@@ -4,7 +4,7 @@
 	:requires
 		"Object::ID" ,
 		"Module::Install 1.00" ,
-		"RDF::Trine 0.112" ,
+		"RDF::Trine 0.133" ,
 		"URI::file 4.0" ;
 	:test_requires
 		"Test::More 0.61" .
