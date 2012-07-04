@@ -6,9 +6,10 @@ use strict;
 
 use Object::ID;
 use RDF::Trine qw[];
+use RDF::TrineX::Parser::Pretdsl qw[];
 use URI::file qw[];
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 my $Model = {};
 
@@ -20,20 +21,33 @@ sub rdf_metadata
 	return $Model->{$addr} if defined $Model->{$addr};
 	my $model = $Model->{$addr} = RDF::Trine::Model->new;
 	
-	my $turtle = RDF::Trine::Parser->new('Turtle');
+	my $parser;
+	
 	while (<meta/*.{ttl,turtle,nt}>)
 	{
 		my $iri = URI::file->new_abs($_);
-		$turtle->parse_file_into_model("$iri", $_, $model);
+		$parser ||= RDF::Trine::Parser->new('Turtle');
+		$parser->parse_file_into_model("$iri", $_, $model);
 	}
+	
+	$parser = undef;
 
-	my $rdfxml = RDF::Trine::Parser->new('RDFXML');
 	while (<meta/*.{rdf,rdfxml,rdfx}>)
 	{
 		my $iri = URI::file->new_abs($_);
-		$rdfxml->parse_file_into_model("$iri", $_, $model);
+		$parser ||= RDF::Trine::Parser->new('RDFXML');
+		$parser->parse_file_into_model("$iri", $_, $model);
 	}
-	
+
+	$parser = undef;
+
+	while (<meta/*.{pret,pretdsl}>)
+	{
+		my $iri = URI::file->new_abs($_);
+		$parser ||= RDF::TrineX::Parser::Pretdsl->new;
+		$parser->parse_file_into_model("$iri", $_, $model);
+	}
+
 	return $model;
 }
 
