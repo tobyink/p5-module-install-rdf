@@ -1,0 +1,29 @@
+`Module-Install-RDF 0.001 cpan:TOBYINK`
+	issued   2011-10-01;
+	label    "Initial release".
+
+`Module-Install-RDF 0.002 cpan:TOBYINK`
+	issued   2011-10-06;
+	changeset [
+		item "Upgrade Module::Package::RDF version."^^Packaging;
+	] .
+
+`Module-Install-RDF 0.003 cpan:TOBYINK`
+	issued   2011-11-26;
+	changeset [
+		item "use parent"^^Regression;
+		item "rdf_project_uri function which provides heuristics to determine the URI of the primary doap:Project described in the meta directory."^^Addition;
+		item "Use Object::ID::object_id instead of Scalar::Util::refaddr to uniquely identity Module::Install objects. (Though in a typical installation scenario, this shouldn't matter much.)"^^Change;
+	] .
+
+`Module-Install-RDF 0.004 cpan:TOBYINK`
+	issued   2011-12-03;
+	changeset [
+		item "use base"^^Bugfix;
+	] .
+
+`Module-Install-RDF 0.005 cpan:TOBYINK`
+	issued   2012-07-04;
+	changeset [
+		item "Support metadata written in Pretdsl."^^Addition;
+	] .
