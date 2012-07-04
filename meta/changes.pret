@@ -11,10 +11,10 @@
 `Module-Install-RDF 0.003 cpan:TOBYINK`
 	issued   2011-11-26;
 	changeset [
-		item "use parent"^^Regression;
-		item "rdf_project_uri function which provides heuristics to determine the URI of the primary doap:Project described in the meta directory."^^Addition;
-		item "Use Object::ID::object_id instead of Scalar::Util::refaddr to uniquely identity Module::Install objects. (Though in a typical installation scenario, this shouldn't matter much.)"^^Change;
-	] .
+		item [ a dcs:Regression; label "use parent" ];
+		item [ a dcs:Addition; label "rdf_project_uri function which provides heuristics to determine the URI of the primary doap:Project described in the meta directory." ];
+		item [ a dcs:Change; label "Use Object::ID::object_id instead of Scalar::Util::refaddr to uniquely identity Module::Install objects. (Though in a typical installation scenario, this shouldn't matter much.)" ];
+	].
 
 `Module-Install-RDF 0.004 cpan:TOBYINK`
 	issued   2011-12-03;

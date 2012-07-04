@@ -12,3 +12,8 @@
 	doap:created               2011-09-30 ;
 	doap:license               <http://dev.perl.org/licenses/>; 
 	doap:category              [label "Semantic Web"], [label "Packaging"].
+
+cpan:tobyink
+	foaf:name                  "Toby Inkster";
+	foaf:mbox                  <mailto:tobyink@cpan.org>;
+	foaf:homepage              <http://tobyinkster.co.uk/>.
