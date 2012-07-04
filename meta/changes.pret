@@ -27,3 +27,9 @@
 	changeset [
 		item "Support metadata written in Pretdsl."^^Addition;
 	] .
+
+`Module-Install-RDF 0.006 cpan:TOBYINK`
+	issued   2012-07-04;
+	changeset [
+		item "Add Module::Runtime dependency."^^Packaging;
+	] .

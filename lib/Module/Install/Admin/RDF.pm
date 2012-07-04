@@ -9,7 +9,7 @@ use RDF::Trine qw[];
 use RDF::TrineX::Parser::Pretdsl qw[];
 use URI::file qw[];
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 my $Model = {};
 
