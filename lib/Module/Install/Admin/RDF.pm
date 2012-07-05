@@ -6,10 +6,9 @@ use strict;
 
 use Object::ID;
 use RDF::Trine qw[];
-use RDF::TrineX::Parser::Pretdsl qw[];
 use URI::file qw[];
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 
 my $Model = {};
 
@@ -44,6 +43,7 @@ sub rdf_metadata
 	while (<meta/*.{pret,pretdsl}>)
 	{
 		my $iri = URI::file->new_abs($_);
+		require RDF::TrineX::Parser::Pretdsl;
 		$parser ||= RDF::TrineX::Parser::Pretdsl->new;
 		$parser->parse_file_into_model("$iri", $_, $model);
 	}

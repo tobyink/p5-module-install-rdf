@@ -1,10 +1,10 @@
 package Module::Install::RDF;
 
-use 5.008;
+use 5.005;
 use base qw(Module::Install::Base);
 use strict;
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 our $AUTHOR_ONLY = 1;
 
 sub rdf_metadata
@@ -52,7 +52,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 by Toby Inkster
+Copyright (C) 2011-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

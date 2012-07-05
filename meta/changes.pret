@@ -33,3 +33,10 @@
 	changeset [
 		item "Add Module::Runtime dependency."^^Packaging;
 	] .
+
+`Module-Install-RDF 0.007 cpan:TOBYINK`
+	issued   2012-07-05;
+	label    "Bond, James Bond";
+	changeset [
+		item "Bump RDF::TriN3 dependency to 0.201."^^Packaging;
+	] .
