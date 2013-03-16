@@ -1,3 +1,1 @@
-use inc::Module::Package 'RDF:tobyink 0.010';
-
-write_meta_ttl;
+use inc::Module::Package 'RDF:tobyink 0.011';
