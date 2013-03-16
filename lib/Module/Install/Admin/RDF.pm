@@ -84,6 +84,7 @@ sub write_meta_ttl
 		doap	http://usefulinc.com/ns/doap#
 		cpan	http://purl.org/NET/cpan-uri/person/
 		dcs	http://ontologi.es/doap-changeset#
+		dbug	http://ontologi.es/doap-bugs#
 		cpant	http://purl.org/NET/cpan-uri/terms#
 	);
 	
