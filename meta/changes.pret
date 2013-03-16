@@ -40,3 +40,9 @@
 	changeset [
 		item "Bump RDF::TriN3 dependency to 0.201."^^Packaging;
 	] .
+
+`Module-Install-RDF 0.008 cpan:TOBYINK`
+	issued   2013-03-16;
+	changeset [
+		item "write_meta_ttl method."^^Addition;
+	] .
