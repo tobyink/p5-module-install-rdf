@@ -13,6 +13,14 @@ sub rdf_metadata
 	$self->admin->rdf_metadata(@_) if $self->is_admin;
 }
 
+sub write_meta_ttl
+{
+	my $self = shift;
+	my $file = shift || "META.yml";
+	$self->admin->write_meta_ttl($file) if $self->is_admin;
+	$self->clean_files($file);
+}
+
 1;
 
 __END__
@@ -24,15 +32,17 @@ Module::Install::RDF - advanced metadata for your distribution
 
 In Makefile.PL:
 
-  rdf_metadata;
+  rdf_metadata;     # reads "meta/*"
+  write_meta_ttl;   # writes "META.ttl"
 
 =head1 DESCRIPTION
 
 This module doesn't really do much on its own, but is a pre-requisite for 
 L<Module::Install::DOAP>.
 
-Specifically, it reads all the RDF it can find in the distribution's 'meta'
-directory and exposes it for other modules to make use of.
+Specifically, it reads all the RDF it can find in the distribution's "meta"
+directory and exposes it for other modules to make use of. It also allows you
+to write out a combined graph using Turtle.
 
 =head1 BUGS
 
