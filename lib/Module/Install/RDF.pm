@@ -16,7 +16,7 @@ sub rdf_metadata
 sub write_meta_ttl
 {
 	my $self = shift;
-	my $file = shift || "META.yml";
+	my $file = shift || "META.ttl";
 	$self->admin->write_meta_ttl($file) if $self->is_admin;
 	$self->clean_files($file);
 }
