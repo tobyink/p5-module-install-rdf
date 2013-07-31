@@ -8,7 +8,7 @@ use Object::ID;
 use RDF::Trine qw[];
 use URI::file qw[];
 
-our $VERSION = '0.008';
+our $VERSION = '0.009';
 
 my $Model = {};
 

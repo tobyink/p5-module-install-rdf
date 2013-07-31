@@ -46,3 +46,10 @@
 	changeset [
 		item "write_meta_ttl method."^^Addition;
 	] .
+
+`Module-Install-RDF 0.009 cpan:TOBYINK`
+	issued   2013-07-31;
+	changeset [
+		item "Add a hard-coded prefix for doap-deps."^^Update;
+		item "Change the hard-coded prefix for doap-bugs."^^Change;
+	] .

@@ -4,7 +4,7 @@ use 5.005;
 use base qw(Module::Install::Base);
 use strict;
 
-our $VERSION = '0.008';
+our $VERSION = '0.009';
 our $AUTHOR_ONLY = 1;
 
 sub rdf_metadata
